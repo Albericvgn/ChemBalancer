@@ -2,12 +2,17 @@
 
 The Chemical Equation Equilibrator is a Python program that balances and equilibrates chemical equations based on reactants and products provided as SMILES strings.
 
+to install ChemBalencer you can use pip: 
+```
+pip install ChemBalencer
+```
+
 ## Features
 
 - SMILES or name Input: Accepts reactants and products as SMILES or chemical compound name strings. This provides a convenient way to input reactants and products.
 - Chemical Equation Balancing: Automatically balances chemical equations by solving an integer linear programming problem to find stoichiometric coefficients.
 - Display Reaction: Formats and displays the balanced chemical reaction in a human-readable format.
-- Calculate standard free gibbs energy: displays the satndard free gibbs energy of the balanced reaction.
+- For a specific temperature, it calculates standard enthropy, enthalpy & free gibbs energy in order to display them and tell wether the reaction is spotaneous or not.
 
 ## Requirements
 
