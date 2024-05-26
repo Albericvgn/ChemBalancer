@@ -21,9 +21,8 @@ from io import BytesIO
 from chemicals import CAS_from_any, Tb, Tm, Tc, Hfs, Hfl, Hfg, S0s, S0l, S0g
 from chembalancer import *
 
-'''
-Creates default session states for potential user inputs which allows the application to remember the values in the event that user wishes to rerun the script.
-'''
+
+#Creates default session states for potential user inputs which allows the application to remember the values in the event that user wishes to rerun the script.
 
 if 'reactant_input' not in st.session_state:
     st.session_state['reactant_input'] = ""
@@ -54,24 +53,24 @@ def reset_form():
         st.session_state['submitted'] = False
         st.session_state['reset'] = False  # Important: reset the flag!
 
-'''
-Streamlit application is launched and titled 'Chemical Equation Balancer'.
 
-Labels and entry fields: 
-- A label asks the user to choose between the simple name or SMILES format when inputting their reactants/products.
-- Two entry fields are provided with labels indicating their use for the user to input their reactants and products in the desired format, using a comma to separate different compounds.
-- A label and entry field indicate for the user to enter the temperature at which the reaction is taking place in Kelvins.
+#Streamlit application is launched and titled 'Chemical Equation Balancer'.
 
-Submit button:
-A button titled 'Balance Equation' is provided for the user to launch the equation balancer. 
-Once clicked, the balance reaction is displayed in string format with the chemical formulas of the compounds and corresponding coefficients.
-The reaction is also displayed with the structures of the molecules but without the stoichiometric coefficients.
-The thermochemical data for the reaction is also displayed (enthalpy, entropy and Gibbs free energy).
-Using the Gibbs free energy, the spontaneity of the reaction is also given.
+#Labels and entry fields:
+#- A label asks the user to choose between the simple name or SMILES format when inputting their reactants/products.
+#- Two entry fields are provided with labels indicating their use for the user to input their reactants and products in the desired format, using a comma to separate different compounds.
+#- A label and entry field indicate for the user to enter the temperature at which the reaction is taking place in Kelvins.
 
-Reset button:
-A button titled 'Clear' allows to user to reinitialise the application, input new reactants/products and rerun the script.
-'''
+#Submit button:
+#A button titled 'Balance Equation' is provided for the user to launch the equation balancer. 
+#Once clicked, the balance reaction is displayed in string format with the chemical formulas of the compounds and corresponding coefficients.
+#The reaction is also displayed with the structures of the molecules but without the stoichiometric coefficients.
+#The thermochemical data for the reaction is also displayed (enthalpy, entropy and Gibbs free energy).
+#Using the Gibbs free energy, the spontaneity of the reaction is also given.
+
+#Reset button:
+#A button titled 'Clear' allows to user to reinitialise the application, input new reactants/products and rerun the script.
+
 
 reset_form()
 

@@ -1,9 +1,8 @@
-![project logo](assets/prog.png)
+![project logo](assets/banner_project_prog.jpg)
 
 # Chemical Equation Balancer
 
-The Chemical Equation Equilibrator is a Python program that balances and equilibrates chemical equations based on reactants and products provided as SMILES strings.
-
+The Chemical Equation Balancer is a Python program that balances chemical reaction equations based on reactants and products provided by the user in the desired format (name or SMILES).
 
 ## Features
 
@@ -17,7 +16,7 @@ The Chemical Equation Equilibrator is a Python program that balances and equilib
 - [NumPy](https://github.com/numpy/numpy): Required for handling arrays and matrices.
 - [RDKit](https://github.com/rdkit/rdkit): A cheminformatics toolkit used for parsing SMILES strings and generating 2D molecular structures.
 - [PuLP](https://coin-or.github.io/pulp/): A linear programming library used for solving integer linear programming problems.
-- [rxnmapper](https://github.com/rxn4chemistry/rxnmapper): A package for mapping reactions.
+- [RXNMapper](https://github.com/rxn4chemistry/rxnmapper): A package for mapping reactions.
 - [IPython](https://ipython.org/): Interactive computing in Python.
 - [requests](https://requests.readthedocs.io/en/latest/): HTTP library for making requests.
 - [base64](https://docs.python.org/3/library/base64.html#): Library for base64 encoding and decoding.
@@ -25,65 +24,58 @@ The Chemical Equation Equilibrator is a Python program that balances and equilib
 - [streamlit](https://streamlit.io/): Used for creating interactive web apps.
 - [Rxn-INSIGHT](https://github.com/schwallergroup/Rxn-INSIGHT): Open-source algorithm, written in python, to classify and name chemical reactions, and suggest reaction conditions based on similarity and popularity.
 
-All of the test environments can be run using the command tox from the top directory.
-Alternatively, individual test environments can be run using the -e flag as 
-in tox -e env-name. To run the tests, tests with coverage report, style checks, and
-docs build, respectively:
-```
-tox -e py3
-tox -e py3-coverage
-tox -e style
-tox -e docs
-```
 ## Installation 
 
 Ensure you have the required dependencies installed: NumPy, RDKit, and PuLP, PIL, rxnmapper, IPython, request and Rxn-INSIGHT.
+1. Installing NumPy:
 ```
 pip install numpy
 ```
+2. Installing RDKit:
 ```
 pip install -c conda-forge rdkit
 ```
+3. Installing PuLP:
 ```
 pip install pulp
 ```
+4. Installing RXNMapper:
 ```
 pip install rxnmapper
 ```
+5. Installing IPython:
 ```
 pip install ipython
 ```
+6. Installing requests:
 ```
 pip install requests 
 ```
+7. Installing base64:
 ```
 pip install pybase64 
 ```
+8. Installing chemicals:
 ```
 pip install chemicals
 ```
+9. Installing streamlit:
 ```
 pip install streamlit
 ```
-A virtual environment can be installed with Anaconda as follows:
+10. Installing Rxn-INSIGHT:
+It should be noted that Rxn-INSIGHT requires the following: NumPy, Pandas, RDKit, RDChiral, and RXNMapper. While some of these are required for our chemical equation balancer and should already be installed, Pandas and RDChiral may need to also be installed:
 ```
-console
-conda create -n rxn-insight python=3.10
-conda activate rxn-insight
+pip install pandas
+pip install rdchiral
 ```
-
+Once all the requirements are met, the following command can be used for the installation:
 ```
 git clone https://github.com/schwallergroup/Rxn-INSIGHT.git
 cd Rxn-INSIGHT
 pip install .
 ```
-
-Or, for developing with the optional dependencies, which are required to run the tests
-and build the docs:
-```
-pip install -e ".[test,doc]"
-```
-
+For more details on the installation of this package, you can click on the following link: https://github.com/schwallergroup/Rxn-INSIGHT
 
 ## Usage
 
@@ -103,6 +95,7 @@ streamlit run ChemBalancerInterface.py
    - Input these compounds, separating them with a comma.
    - Input the temperature at which you wish to study this reaction (in Kelvins).
    - Click on the 'Balance Equation' button to generate the balanced reaction as well as the thermochemical data.
+   - Use the 'Clear' button if you wish to balance a new equation with different reactants/products.
 
 
 ##  Reference
@@ -126,3 +119,9 @@ streamlit run ChemBalancerInterface.py
   language  = "en"
 }
 ```
+
+## Developpers
+
+- [Fane SHALA](https://github.com/faneshala), student in chemistry at EPFL.
+- [John STEWART](https://github.com/johnstewartepfl), student in chemical engineering at EPFL.
+- [Albéric VIGNE](https://github.com/albericvgn), student in chemistry at EPFL.
