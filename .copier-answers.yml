@@ -1,0 +1,9 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: 66fd52c
+_src_path: gh:schwallergroup/copier-liac-minimal
+author_email: alberic.vigne@epfl.ch
+author_name: Alberic Vigne, Fane Shala; John Stewart
+github_org: albericvgn
+package_name: chembalancer
+project_name: ChemBalancer
+short_description: Chemical Equation Balancer
