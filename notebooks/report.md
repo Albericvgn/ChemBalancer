@@ -29,6 +29,12 @@ and this is the result he got.
  
 He now can choose to clear everything to do the same thing for a new equation. 
 
+## Challenges faced
+
+During the whole project we faced many challenges. From the start with the decision on ho to design the interaction with the users. This led to the actual setting where the user can choose what to input for its reaction. 
+The balance of the equation was less of a struggle as it really used skills we developped during the semester ans last year. The following challege was the represenation of the reaction which guided us in many directions and was very time-consuming. In the end the vsg was a great compromise as is it easy to undestand while keeping the major part of informations on the compounds structure. 
+The biggest challenge was the organization of the python package with all the constrincts and requierments that it goes with (tests, notebook...)
+
 ## Conclusion:
 
 The Chemical Equation Balancer offers a convenient and efficient solution for balancing chemical equations, having a visual representation of them and analyzing reaction thermodynamics. By automating the balancing process and providing thermodynamic insights, it streamlines chemical analysis tasks and aids in the understanding of reaction kinetics and energetics. This tool serves as a valuable resource for students, researchers, and professionals working in the field of chemistry. 
