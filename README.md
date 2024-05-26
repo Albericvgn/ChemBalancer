@@ -106,13 +106,18 @@ you can use pip:
 ```
 pip install ChemBalancer
 ```
+Ensure you have the required dependencies installed: NumPy, RDKit, and PuLP, PIL, rxnmapper, IPython, request and Rxn-INSIGHT.
+
 
 ## Usage
 
-1. Ensure you have the required dependencies installed: NumPy, RDKit, and PuLP, PIL, rxnmapper, IPython, request and Rxn-INSIGHT.
-2. Navigate to the cloned repository and run the following command.
+1. Clone this repository and navigate to it.
   ```
+git clone
 cd ChemBalancer
+  ```
+2. To open the application, run the following command.
+  ```
 streamlit run ChemBalancerInterface.py
   ```
 4. Follow the prompts to select the desired format of the input, the reactants/products as well as the temperature at which the reaction is taking place.
