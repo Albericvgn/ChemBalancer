@@ -8,7 +8,7 @@ except NameError:
 src_path = os.path.join(current_dir, '..', 'src')
 sys.path.insert(0, src_path)
 
-from chembalancer import test_hello_smiles  
+from chembalancer.chembalancer import test_hello_smiles  
 
 
 # Test the function

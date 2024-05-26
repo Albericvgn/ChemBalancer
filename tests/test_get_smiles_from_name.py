@@ -14,7 +14,7 @@ except NameError:
 src_path = os.path.join(current_dir, '..', 'src')
 sys.path.insert(0, src_path)
 
-from chembalancer import get_smiles_from_name  
+from chembalancer.chembalancer import get_smiles_from_name  
 
 
 def test_get_smiles_from_name_success():
