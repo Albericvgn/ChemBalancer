@@ -7,6 +7,7 @@ from requests_mock import Mocker
 
 from src/chembalancer.chembalancer import get_smiles_from_name  
 
+
 def test_get_smiles_from_name_success():
     mock_response = {
         "PropertyTable": {

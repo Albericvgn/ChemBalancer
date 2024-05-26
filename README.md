@@ -13,75 +13,77 @@ The Chemical Equation Equilibrator is a Python program that balances and equilib
 
 - NumPy: Required for handling arrays and matrices.
 
-
+```
 pip install numpy
-
+```
 
 - RDKit: A cheminformatics toolkit used for parsing SMILES strings and generating 2D molecular structures.
 
-
+```
 pip install -c conda-forge rdkit
-
+```
 
 - PuLP: A linear programming library used for solving integer linear programming problems.
 
-
+```
 pip install pulp
+```
 
 - PIL: Python Imaging Library used for image manipulation.
 
-
+```
 pip install pillow
-
+```
 
 - rxnmapper: A package for mapping reactions.
 
-
+```
 pip install rxnmapper
+```
 
 - IPython:Interactive computing in Python.
 
-
+```
 pip install ipython
-
+```
 
 - request:HTTP library for making requests.
 
-
+```
 pip install request 
-
+```
 
 - Rxn-INSIGHT relies on NumPy, Pandas, RDKit, RDChiral, and RXNMapper.
 
 A virtual environment can be installed with Anaconda as follows:
-
+```
 console
 conda create -n rxn-insight python=3.10
 conda activate rxn-insight
+```
 
-
-
+```
 git clone https://github.com/schwallergroup/Rxn-INSIGHT.git
 cd Rxn-INSIGHT
 pip install .
-
+```
 
 Or, for developing with the optional dependencies, which are required to run the tests
 and build the docs:
- 
+```
 pip install -e ".[test,doc]"
-
+```
 
 All of the test environments can be run using the command tox from the top directory.
 Alternatively, individual test environments can be run using the -e flag as 
 in tox -e env-name. To run the tests, tests with coverage report, style checks, and
 docs build, respectively:
-
+```
 tox -e py3
 tox -e py3-coverage
 tox -e style
 tox -e docs
-
+```
 
 ## Usage
 
@@ -98,7 +100,7 @@ tox -e docs
 `M. R. Dobbelaere, I. Lengyel, C. V. Stevens, and K. M. Van Geem, 
 ‘Rxn-INSIGHT: fast chemical reaction analysis using bond-electron matrices’, J. Cheminform., vol. 16, no. 1, Mar. 2024.`
 
-
+```
 @ARTICLE{Dobbelaere2024-es,
   title     = "{Rxn-INSIGHT}: fast chemical reaction analysis using
                bond-electron matrices",
@@ -113,4 +115,4 @@ tox -e docs
   copyright = "https://creativecommons.org/licenses/by/4.0",
   language  = "en"
 }
-
+```
