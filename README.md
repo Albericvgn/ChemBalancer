@@ -1,3 +1,5 @@
+![project logo](assets/prog.png)
+
 # Chemical Equation Balancer
 
 The Chemical Equation Equilibrator is a Python program that balances and equilibrates chemical equations based on reactants and products provided as SMILES strings.
