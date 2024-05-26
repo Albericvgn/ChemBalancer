@@ -92,11 +92,11 @@ def get_molecular_formula(smiles):
     else:
         return "Invalid SMILES string"
 
+
 def balance_chemical_equation(reactant_smiles, product_smiles):
-    """ Balance a chemical equation given reactants and products as SMILES strings. """
     reactant_counts = [count_atoms(smiles) for smiles in reactant_smiles]
     product_counts = [count_atoms(smiles) for smiles in product_smiles]
-    
+
     reactant_elements = set(sum([list(counts.keys()) for counts in reactant_counts], []))
     product_elements = set(sum([list(counts.keys()) for counts in product_counts], []))
 
@@ -114,23 +114,35 @@ def balance_chemical_equation(reactant_smiles, product_smiles):
     A_reactants = setup_matrix(elements, reactant_counts)
     A_products = setup_matrix(elements, product_counts)
     A = np.concatenate([A_reactants, -A_products], axis=1)
-    
+
     integer_coefficients = solve_ilp(A)
+    if integer_coefficients is None or not integer_coefficients:
+        raise ValueError("Failed to solve the balance equation. The system may be underdetermined or inconsistent.")
+
     reactant_coeffs = integer_coefficients[:len(reactant_smiles)]
     product_coeffs = integer_coefficients[len(reactant_smiles):]
-    
+
     reactant_data = [(coeff, get_molecular_formula(smiles)) for coeff, smiles in zip(reactant_coeffs, reactant_smiles)]
     product_data = [(coeff, get_molecular_formula(smiles)) for coeff, smiles in zip(product_coeffs, product_smiles)]
 
     return reactant_data, product_data
+
+
     
-def setup_matrix(elements, compounds):
-    """ Create a stoichiometry matrix for the elements and compounds. """
+def setup_matrix(elements, counts):
+    # Assuming counts is a list of dictionaries where each dictionary is the atomic count for a molecule
     matrix = []
-    for element in elements:
-        row = [compound.get(element, 0) for compound in compounds]
+    for count in counts:
+        row = [count.get(element, 0) for element in elements]
         matrix.append(row)
-    return np.array(matrix, dtype=int)
+    
+    # Ensure matrix is 2D
+    matrix = np.array(matrix)
+    if matrix.ndim == 1:
+        matrix = matrix.reshape(1, -1)  # Reshape to 2D if it's inadvertently 1D
+
+    return matrix
+
 
 def display_reaction(reactants, products):
     """Format and display the chemical reaction."""
