@@ -5,7 +5,7 @@ import requests
 from requests.exceptions import HTTPError
 from requests_mock import Mocker
 
-from your_module import get_smiles_from_name  # Replace 'your_module' with the actual module name
+from chembalancer import get_smiles_from_name  # Replace 'your_module' with the actual module name
 
 def test_get_smiles_from_name_success():
     mock_response = {
