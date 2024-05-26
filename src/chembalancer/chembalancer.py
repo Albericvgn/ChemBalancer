@@ -1,11 +1,13 @@
 import rdkit
+from collections import defaultdict
+import requests
 
 
 if __name__ == "__main__":
     print(hello_smiles("C(=O)O"))
 
 
-import requests
+
 
 def get_smiles_from_name(name):
     """Fetch the SMILES string of a molecule by its common name from PubChem."""
