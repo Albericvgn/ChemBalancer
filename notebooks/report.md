@@ -21,11 +21,11 @@ The one of the function used for the interface is available in ChemBalencer_inte
 
 an example used is displayed here, the user choose to input chemical names for the combustion reaction of benzene at 298.00 K :
 
-![input](assets/input.jpg)
+![input](../assets/input.jpg)
 
 and this is the result he got.
 
-![output](assets/output.jpg)
+![output](../assets/output.jpg)
  
 He now can choose to clear everything to do the same thing for a new equation. 
 
