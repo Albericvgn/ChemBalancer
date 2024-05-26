@@ -14,63 +14,57 @@ The Chemical Equation Equilibrator is a Python program that balances and equilib
 
 ## Requirements
 
-- NumPy: Required for handling arrays and matrices.
+- [NumPy](https://github.com/numpy/numpy): Required for handling arrays and matrices.
+- [RDKit](https://github.com/rdkit/rdkit): A cheminformatics toolkit used for parsing SMILES strings and generating 2D molecular structures.
+- [PuLP](https://coin-or.github.io/pulp/): A linear programming library used for solving integer linear programming problems.
+- [rxnmapper](https://github.com/rxn4chemistry/rxnmapper): A package for mapping reactions.
+- [IPython](https://ipython.org/): Interactive computing in Python.
+- [requests](https://requests.readthedocs.io/en/latest/): HTTP library for making requests.
+- [base64](https://docs.python.org/3/library/base64.html#): Library for base64 encoding and decoding.
+- [chemicals](https://github.com/CalebBell/chemicals): A package for chemical properties.
+- [streamlit](https://streamlit.io/): Used for creating interactive web apps.
+- [Rxn-INSIGHT](https://github.com/schwallergroup/Rxn-INSIGHT): Open-source algorithm, written in python, to classify and name chemical reactions, and suggest reaction conditions based on similarity and popularity.
 
+All of the test environments can be run using the command tox from the top directory.
+Alternatively, individual test environments can be run using the -e flag as 
+in tox -e env-name. To run the tests, tests with coverage report, style checks, and
+docs build, respectively:
+```
+tox -e py3
+tox -e py3-coverage
+tox -e style
+tox -e docs
+```
+## Installation 
+
+Ensure you have the required dependencies installed: NumPy, RDKit, and PuLP, PIL, rxnmapper, IPython, request and Rxn-INSIGHT.
 ```
 pip install numpy
 ```
-
-- RDKit: A cheminformatics toolkit used for parsing SMILES strings and generating 2D molecular structures.
-
 ```
 pip install -c conda-forge rdkit
 ```
-
-- PuLP: A linear programming library used for solving integer linear programming problems.
-
 ```
 pip install pulp
 ```
-
-- rxnmapper: A package for mapping reactions.
-
 ```
 pip install rxnmapper
 ```
-
-- IPython:Interactive computing in Python.
-
 ```
 pip install ipython
 ```
-
-- request:HTTP library for making requests.
-
 ```
-pip install request 
+pip install requests 
 ```
-
-- base64 : Library for base64 encoding and decoding.
-
 ```
 pip install pybase64 
 ```
-
-- chemicals: A package for chemical properties.
-
 ```
 pip install chemicals
 ```
-
-- streamlit: For creating interactive web apps
-
 ```
 pip install streamlit
 ```
-
-
-- Rxn-INSIGHT relies on NumPy, Pandas, RDKit, RDChiral, and RXNMapper.
-
 A virtual environment can be installed with Anaconda as follows:
 ```
 console
@@ -90,34 +84,16 @@ and build the docs:
 pip install -e ".[test,doc]"
 ```
 
-All of the test environments can be run using the command tox from the top directory.
-Alternatively, individual test environments can be run using the -e flag as 
-in tox -e env-name. To run the tests, tests with coverage report, style checks, and
-docs build, respectively:
-```
-tox -e py3
-tox -e py3-coverage
-tox -e style
-tox -e docs
-```
-## Installing ChemBalencer 
-you can use pip:
-
-```
-pip install ChemBalancer
-```
-Ensure you have the required dependencies installed: NumPy, RDKit, and PuLP, PIL, rxnmapper, IPython, request and Rxn-INSIGHT.
-
 
 ## Usage
 
-1. Clone this repository and navigate to it.
+1. Clone this repository and navigate to it:
   ```
 git clone https://github.com/Albericvgn/ChemBalancer
 cd ChemBalancer
   ```
 
-2. To open the application, run the following command.
+2. To open the application, run the following command:
   ```
 streamlit run ChemBalancerInterface.py
   ```
