@@ -1,19 +1,33 @@
 
+
+
 if __name__ == "__main__":
     print(hello_smiles("C(=O)O"))
 
 
+import requests
 
 def get_smiles_from_name(name):
     """Fetch the SMILES string of a molecule by its common name from PubChem."""
     url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/{name}/property/CanonicalSMILES/JSON"
-    response = requests.get(url)
-    if response.status_code == 200:
+    try:
+        response = requests.get(url)
+        response.raise_for_status()  # Raise HTTPError for bad responses
         data = response.json()
         smiles = data['PropertyTable']['Properties'][0]['CanonicalSMILES']
         return smiles
-    else:
+    except requests.exceptions.HTTPError as errh:
+        # Handle HTTPError
+        return f"HTTP Error: {errh}"
+    except requests.exceptions.RequestException as err:
+        # Handle other RequestExceptions
+        return f"Request Exception: {err}"
+    except (KeyError, IndexError):
+        # Handle missing data or incorrect JSON format
         return "No data found or error occurred."
+
+
+
 
 def count_atoms(smiles):
     """ Count atoms in a SMILES string. """
