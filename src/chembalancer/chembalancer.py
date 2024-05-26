@@ -13,15 +13,9 @@ import requests
 import base64
 from io import BytesIO
 from chemicals import CAS_from_any, Tb, Tm, Tc, Hfs, Hfl, Hfg, S0s, S0l, S0g
-
-
 from collections import defaultdict
+from rdkit import Chem
 import requests
-
-
-if __name__ == "__main__":
-    print(hello_smiles("C(=O)O"))
-
 
 
 
@@ -46,10 +40,6 @@ def get_smiles_from_name(name):
 
 
 
-from collections import defaultdict
-from rdkit import Chem
-
-
 def count_atoms(smiles):
     """ Count atoms in a SMILES string. """
     mol = Chem.MolFromSmiles(smiles)
@@ -64,16 +54,36 @@ def solve_ilp(A):
     """ Solve the integer linear programming problem to find stoichiometric coefficients. """
     num_vars = A.shape[1]
     prob = pulp.LpProblem("Balancing_Chemical_Equation", pulp.LpMinimize)
+    
+    # Define variables with lower bound starting from 1
     x_vars = [pulp.LpVariable(f'x{i}', lowBound=1, cat='Integer') for i in range(num_vars)]
+    
+    # Objective function
     prob += pulp.lpSum(x_vars)
+    
+    # Constraints
     for i in range(A.shape[0]):
         prob += pulp.lpDot(A[i, :], x_vars) == 0
-    solver = pulp.PULP_CBC_CMD(msg=False)
+    
+    # Solve the problem
+    solver = pulp.PULP_CBC_CMD(msg=True)  # Enable logging from the solver
     prob.solve(solver)
+    
+    print(f"Status: {pulp.LpStatus[prob.status]}")  # Print the status of the problem
+    
     if pulp.LpStatus[prob.status] == 'Optimal':
-        return [int(pulp.value(var)) for var in x_vars]
+        solution = [int(pulp.value(var)) for var in x_vars]
+        print(f"Solution: {solution}")  # Print the solution found
+        
+        # Check if solution is not just zeros
+        if all(x == 0 for x in solution):
+            return None
+        
+        return solution
     else:
-        raise RuntimeError("Failed to find a valid solution.")
+        return None
+
+
 
 def get_molecular_formula(smiles):
     molecule = Chem.MolFromSmiles(smiles)
@@ -152,3 +162,30 @@ def display_svg(svg):
     b64 = base64.b64encode(svg.encode('utf-8')).decode("utf-8")
     html = f"<img src='data:image/svg+xml;base64,{b64}'/>"
     st.markdown(html, unsafe_allow_html=True)
+
+def compound_state(compound, temp):
+    CAS_compound = CAS_from_any(compound)
+    boiling_p = Tb(CAS_compound)
+    melting_p = Tm(CAS_compound)
+    if temp <= melting_p:
+        return 'solid'
+    elif temp > melting_p and temp <= boiling_p:
+        return 'liquid'
+    else:
+        return 'gas'
+
+def enthalpy(coeff, compound, state):
+    if state == 'solid': 
+        return coeff * Hfs(CAS_from_any(compound))
+    elif state == 'liquid':
+        return coeff * Hfl(CAS_from_any(compound))
+    else: 
+        return coeff * Hfg(CAS_from_any(compound))
+
+def entropy(coeff, compound, state):
+    if state == 'solid': 
+        return coeff * S0s(CAS_from_any(compound))
+    elif state == 'liquid':
+        return coeff * S0l(CAS_from_any(compound))
+    else: 
+        return coeff * S0g(CAS_from_any(compound))
