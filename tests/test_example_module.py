@@ -1,8 +1,3 @@
-
-import pytest
-import requests
-from requests.exceptions import HTTPError
-from requests_mock import Mocker
 import sys
 import os
 
