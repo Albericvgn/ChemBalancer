@@ -1,4 +1,20 @@
-import rdkit
+import streamlit as st
+import numpy as np
+from rdkit import Chem
+from rdkit.Chem import Draw, AllChem
+from collections import defaultdict
+import pulp
+from rxnmapper import RXNMapper
+from rxn_insight.reaction import Reaction
+from rxn_insight.utils import draw_chemical_reaction, curate_smirks, get_similarity, get_fp
+from IPython.display import SVG
+import time
+import requests
+import base64
+from io import BytesIO
+from chemicals import CAS_from_any, Tb, Tm, Tc, Hfs, Hfl, Hfg, S0s, S0l, S0g
+
+
 from collections import defaultdict
 import requests
 
@@ -30,6 +46,9 @@ def get_smiles_from_name(name):
 
 
 
+from collections import defaultdict
+from rdkit import Chem
+
 
 def count_atoms(smiles):
     """ Count atoms in a SMILES string. """
@@ -39,6 +58,7 @@ def count_atoms(smiles):
         for atom in mol.GetAtoms():
             atom_counts[atom.GetSymbol()] += 1
     return dict(atom_counts)
+
 
 def solve_ilp(A):
     """ Solve the integer linear programming problem to find stoichiometric coefficients. """
