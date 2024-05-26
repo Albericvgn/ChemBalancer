@@ -76,7 +76,7 @@ git clone https://github.com/schwallergroup/Rxn-INSIGHT.git
 cd Rxn-INSIGHT
 pip install .
 ```
-For more details on the installation of this package, you can click on the following link https://github.com/schwallergroup/Rxn-INSIGHT
+For more details on the installation of this package, you can click on the following link: https://github.com/schwallergroup/Rxn-INSIGHT
 
 ## Usage
 
@@ -120,3 +120,9 @@ streamlit run ChemBalancerInterface.py
   language  = "en"
 }
 ```
+
+## Developpers
+
+- Fane SHALA
+- John STEWART
+- Albéric VIGNE
