@@ -1,4 +1,4 @@
-from src.chembalancer.chembalancer import hello_smiles
+from chembalancer.chembalancer import hello_smiles
 
 
 # Test the function
