@@ -1,4 +1,4 @@
-![project logo](assets/prog.png)
+![project logo](assets/input.jpg)
 
 # Chemical Equation Balancer
 
