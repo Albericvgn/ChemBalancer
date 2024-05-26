@@ -4,8 +4,17 @@ import pytest
 import requests
 from requests.exceptions import HTTPError
 from requests_mock import Mocker
+import sys
+import os
 
-from src/chembalancer.chembalancer import get_smiles_from_name  
+try:
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+except NameError:
+    current_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
+src_path = os.path.join(current_dir, '..', 'src')
+sys.path.insert(0, src_path)
+
+from chembalancer import get_smiles_from_name  
 
 
 def test_get_smiles_from_name_success():
