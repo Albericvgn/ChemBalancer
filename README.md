@@ -123,6 +123,6 @@ streamlit run ChemBalancerInterface.py
 
 ## Developpers
 
-- Fane SHALA
+- Fane SHALA [![Profile](https://github.com/faneshala.png?size=50)](https://github.com/faneshala)
 - John STEWART
 - Albéric VIGNE
