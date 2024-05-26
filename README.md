@@ -32,12 +32,6 @@ pip install -c conda-forge rdkit
 pip install pulp
 ```
 
-- PIL: Python Imaging Library used for image manipulation.
-
-```
-pip install pillow
-```
-
 - rxnmapper: A package for mapping reactions.
 
 ```
@@ -116,15 +110,13 @@ pip install ChemBalancer
 ## Usage
 
 1. Ensure you have the required dependencies installed: NumPy, RDKit, and PuLP, PIL, rxnmapper, IPython, request and Rxn-INSIGHT.
-2. Run the Python script chemical_equation_equilibrator.py.
+2. Navigate to the cloned repository and run the following command.
   ```
 cd ChemBalancer
 streamlit run ChemBalancerInterface.py
   ```
-4. Follow the prompts to input the number of reactants and products, as well as the SMILES or names strings for each.
-5. The program will automatically balance the chemical equation.
-6. It will display the balanced reaction.
-7. It will calculate standard enthropy, enthalpy and free Gibbs energy at a given temperature and display them.
+4. Follow the prompts to select the desired format of the input, the reactants/products as well as the temperature at which the reaction is taking place.
+5. Select the 'Balance Equation' button and the balanced reaction will be displayed as well as the change in enthalpy, entropy and Gibbs free energy.
 
 
 ##  Reference
