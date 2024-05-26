@@ -2,7 +2,6 @@ import sys
 import os
 import unittest
 import numpy as np
-from unittest.mock import patch, Mock
 from pulp import LpProblem, lpSum, lpDot, PULP_CBC_CMD, LpVariable, value, LpStatus
 
 
