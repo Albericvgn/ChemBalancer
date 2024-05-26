@@ -1,10 +1,10 @@
-# Chemical Equation Balencer
+# Chemical Equation Balancer
 
 The Chemical Equation Equilibrator is a Python program that balances and equilibrates chemical equations based on reactants and products provided as SMILES strings.
 
 to install ChemBalencer you can use pip: 
 ```
-pip install ChemBalencer
+pip install ChemBalancer
 ```
 
 ## Features
