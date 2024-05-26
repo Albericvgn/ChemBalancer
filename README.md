@@ -117,10 +117,14 @@ pip install ChemBalancer
 
 1. Ensure you have the required dependencies installed: NumPy, RDKit, and PuLP, PIL, rxnmapper, IPython, request and Rxn-INSIGHT.
 2. Run the Python script chemical_equation_equilibrator.py.
-3. Follow the prompts to input the number of reactants and products, as well as the SMILES or names strings for each.
-4. The program will automatically balance the chemical equation.
-5. It will display the balanced reaction.
-6. It will calculate standard enthropy, enthalpy and free Gibbs energy at a given temperature and display them.
+  ```
+cd ChemBalancer
+streamlit run ChemBalancerInterface.py
+  ```
+4. Follow the prompts to input the number of reactants and products, as well as the SMILES or names strings for each.
+5. The program will automatically balance the chemical equation.
+6. It will display the balanced reaction.
+7. It will calculate standard enthropy, enthalpy and free Gibbs energy at a given temperature and display them.
 
 
 ##  Reference
