@@ -113,15 +113,20 @@ Ensure you have the required dependencies installed: NumPy, RDKit, and PuLP, PIL
 
 1. Clone this repository and navigate to it.
   ```
-git clone
+git clone https://github.com/Albericvgn/ChemBalancer
 cd ChemBalancer
   ```
+
 2. To open the application, run the following command.
   ```
 streamlit run ChemBalancerInterface.py
   ```
-4. Follow the prompts to select the desired format of the input, the reactants/products as well as the temperature at which the reaction is taking place.
-5. Select the 'Balance Equation' button and the balanced reaction will be displayed as well as the change in enthalpy, entropy and Gibbs free energy.
+
+3. Once the streamlit application is open and running, follow these steps to balance your reaction:
+   - Select the desired format that you would like to input the reactants/products in (name or SMILES).
+   - Input these compounds, separating them with a comma.
+   - Input the temperature at which you wish to study this reaction (in Kelvins).
+   - Click on the 'Balance Equation' button to generate the balanced reaction as well as the thermochemical data.
 
 
 ##  Reference
