@@ -58,6 +58,19 @@ pip install ipython
 pip install request 
 ```
 
+- base64 : Library for base64 encoding and decoding.
+
+```
+pip install pybase64 
+```
+
+- chemicals: A package for chemical properties.
+
+```
+pip install chemicals 
+```
+
+
 - Rxn-INSIGHT relies on NumPy, Pandas, RDKit, RDChiral, and RXNMapper.
 
 A virtual environment can be installed with Anaconda as follows:
