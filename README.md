@@ -1,13 +1,16 @@
-# Chemical Equation Balencer
+![project logo](assets/prog.png)
+
+# Chemical Equation Balancer
 
 The Chemical Equation Equilibrator is a Python program that balances and equilibrates chemical equations based on reactants and products provided as SMILES strings.
+
 
 ## Features
 
 - SMILES or name Input: Accepts reactants and products as SMILES or chemical compound name strings. This provides a convenient way to input reactants and products.
 - Chemical Equation Balancing: Automatically balances chemical equations by solving an integer linear programming problem to find stoichiometric coefficients.
 - Display Reaction: Formats and displays the balanced chemical reaction in a human-readable format.
-- Calculate standard free gibbs energy: displays the satndard free gibbs energy of the balanced reaction.
+- For a specific temperature, it calculates standard enthropy, enthalpy & free gibbs energy in order to display them and tell wether the reaction is spotaneous or not.
 
 ## Requirements
 
@@ -53,6 +56,25 @@ pip install ipython
 pip install request 
 ```
 
+- base64 : Library for base64 encoding and decoding.
+
+```
+pip install pybase64 
+```
+
+- chemicals: A package for chemical properties.
+
+```
+pip install chemicals
+```
+
+- streamlit: For creating interactive web apps
+
+```
+pip install streamlit
+```
+
+
 - Rxn-INSIGHT relies on NumPy, Pandas, RDKit, RDChiral, and RXNMapper.
 
 A virtual environment can be installed with Anaconda as follows:
@@ -84,6 +106,12 @@ tox -e py3-coverage
 tox -e style
 tox -e docs
 ```
+## Installing ChemBalencer 
+you can use pip:
+
+```
+pip install ChemBalancer
+```
 
 ## Usage
 
@@ -92,7 +120,7 @@ tox -e docs
 3. Follow the prompts to input the number of reactants and products, as well as the SMILES or names strings for each.
 4. The program will automatically balance the chemical equation.
 5. It will display the balanced reaction.
-6. It will display the standard free gibbs energy.
+6. It will calculate standard enthropy, enthalpy and free Gibbs energy at a given temperature and display them.
 
 
 ##  Reference
