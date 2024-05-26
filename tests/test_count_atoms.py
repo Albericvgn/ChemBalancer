@@ -5,8 +5,7 @@ import os
 from unittest.mock import patch
 from rdkit import Chem
 import unittest
-from chembalancer.chembalancer import count_atoms
-from chembalancer import Chem 
+
 
 
 try:
@@ -15,7 +14,11 @@ except NameError:
     current_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
 src_path = os.path.join(current_dir, '..', 'src')
 sys.path.insert(0, src_path)
- 
+
+from chembalancer.chembalancer import count_atoms
+
+
+from chembalancer import Chem  # Import Chem from the chembalancer module
 
 class TestCountAtoms(unittest.TestCase):
     @patch('chembalancer.Chem', autospec=True)
@@ -71,4 +74,4 @@ class TestCountAtoms(unittest.TestCase):
         mock_instance.get_formula.assert_called_once()
 
 if __name__ == '__main__':
-    pytest.main(['-p', 'no:warnings'])
+    unittest.main()
