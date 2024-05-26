@@ -13,9 +13,9 @@ The Chemical Equation Equilibrator is a Python program that balances and equilib
 
 - NumPy: Required for handling arrays and matrices.
 
-
+```
 pip install numpy
-
+```
 
 - RDKit: A cheminformatics toolkit used for parsing SMILES strings and generating 2D molecular structures.
 
