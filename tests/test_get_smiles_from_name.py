@@ -5,7 +5,7 @@ import requests
 from requests.exceptions import HTTPError
 from requests_mock import Mocker
 
-from chembalancer.chembalancer import get_smiles_from_name  
+from src/chembalancer.chembalancer import get_smiles_from_name  
 
 def test_get_smiles_from_name_success():
     mock_response = {
