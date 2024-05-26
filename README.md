@@ -2,8 +2,7 @@
 
 # Chemical Equation Balancer
 
-The Chemical Equation Balancer is a Python program that balances and equilibrates chemical equations based on reactants and products provided as SMILES strings.
-
+The Chemical Equation Balancer is a Python program that balances chemical reaction equations based on reactants and products provided by the user in the desired format (name or SMILES).
 
 ## Features
 
@@ -124,5 +123,5 @@ streamlit run ChemBalancerInterface.py
 ## Developpers
 
 - [Fane SHALA](https://github.com/faneshala), student in chemistry at EPFL.
-- [John STEWART](https://github.com/johnstewartepfl), student in chemical engineering at EPFL
-- [Albéric VIGNE](https://github.com/albericvgn), student in chemistry at EPFL
+- [John STEWART](https://github.com/johnstewartepfl), student in chemical engineering at EPFL.
+- [Albéric VIGNE](https://github.com/albericvgn), student in chemistry at EPFL.
