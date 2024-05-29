@@ -24,7 +24,7 @@ The Chemical Equation Balancer is a Python program that balances chemical reacti
 - [streamlit](https://streamlit.io/): Used for creating interactive web apps.
 - [Rxn-INSIGHT](https://github.com/schwallergroup/Rxn-INSIGHT): Open-source algorithm, written in python, to classify and name chemical reactions, and suggest reaction conditions based on similarity and popularity.
 
-## ⚠ Installation 
+## 👷 Installation 
 
 Before installing any of the required dependencies, it is recommended that you create and activate an environment to do this in as to avoid any potential conflicts.
 1. Clone this repository and navigate to it:
@@ -98,7 +98,7 @@ Once all the dependencies are installed, you can run your Streamlit application.
 streamlit run your_script_name.py
 ```
 
-## Usage
+##  🔩 Usage
 
 ** 1. Activate the environment and navigate to ChemBalancer:
   ```
@@ -119,9 +119,9 @@ streamlit run ChemBalancerInterface.py
    - Click on the 'Balance Equation' button to generate the balanced reaction as well as the thermochemical data.
    - Use the 'Clear' button if you wish to balance a new equation with different reactants/products.
 
-## important 
+##  ⚠ Important 
 
-Make sure to always have this link by your side 
+Now you are all set. Make sure to always have this link by your side:  
 
 Just click on the following logo, and don't forget to pin it to your favorites! 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://rankchem.streamlit.app/)
