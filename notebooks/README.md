@@ -1,6 +1,5 @@
-# project_report
+## Project report
 
-The report is separated in 3 parts
+The report is separated in 2 parts
 - The first one with the text part of the report.
-- The second part, with the explanation and decription of the functions (purpose, how it works, what are the parameters and what does it returns).
-- The last one with the description of the functions used for the interface. 
+- The second part, with the explanations and decription of the functions (purpose, how it works, what are the parameters and what does it returns).
