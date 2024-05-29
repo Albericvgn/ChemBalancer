@@ -142,7 +142,7 @@ streamlit run ChemBalancerInterface.py
 }
 ```
 
-## Developpers
+## Developers
 
 - Fane SHALA, student in chemistry at EPFL. [<img src="./assets/GitHubSymb.png" alt="Profile Picture" width="60">](https://github.com/faneshala)
 - John STEWART, student in chemical engineering at EPFL. [<img src="./assets/GitHubSymb.png" alt="Profile Picture" width="60">](https://github.com/johnstewartepfl)
