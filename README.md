@@ -100,7 +100,7 @@ streamlit run your_script_name.py
 
 ## Usage
 
-1. Activate the environment and navigate to ChemBalancer:
+** 1. Activate the environment and navigate to ChemBalancer:
   ```
 conda activate your_env_name
 cd ChemBalancer
@@ -120,6 +120,8 @@ streamlit run ChemBalancerInterface.py
    - Use the 'Clear' button if you wish to balance a new equation with different reactants/products.
 
 4.make sure to always have this link by your side 
+
+just click on the following logo, and don't forget to pin it to your favorites! 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://rankchem.streamlit.app/)
 
 ##  Reference
