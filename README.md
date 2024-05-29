@@ -26,7 +26,21 @@ The Chemical Equation Balancer is a Python program that balances chemical reacti
 
 ## Installation 
 
-Ensure you have the required dependencies installed: NumPy, RDKit, and PuLP, PIL, rxnmapper, IPython, request and Rxn-INSIGHT.
+Before installing any of the required dependencies, it is recommended that you create and activate an environment to do this in as to avoid any potential conflicts.
+1. Clone this repository and navigate to it:
+  ```
+git clone https://github.com/Albericvgn/ChemBalancer
+cd ChemBalancer
+  ```
+2. Create a conda environment.
+```
+conda create -n your_env_name python=3.10
+```
+3. Activate this environment.
+```
+conda activate your_env_name
+```
+Now that the environment is activated, the dependencies required for the code must be installed.
 1. Installing NumPy:
 ```
 pip install numpy
@@ -75,13 +89,14 @@ git clone https://github.com/schwallergroup/Rxn-INSIGHT.git
 cd Rxn-INSIGHT
 pip install .
 ```
+
 For more details on the installation of this package, you can click on the following link: https://github.com/schwallergroup/Rxn-INSIGHT
 
 ## Usage
 
-1. Clone this repository and navigate to it:
+1. Activate the environment and navigate to ChemBalancer:
   ```
-git clone https://github.com/Albericvgn/ChemBalancer
+conda activate your_env_name
 cd ChemBalancer
   ```
 
