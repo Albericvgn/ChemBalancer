@@ -19,21 +19,21 @@ The one of the function used for the interface is available in ChemBalencer_inte
 
 ## Example of usage 
 
-an example used is displayed here, the user choose to input chemical names for the combustion reaction of benzene at 298.00 K :
+An example is displayed here, the user chose to input chemical names for the combustion reaction of benzene at 298.00 K :
 
 ![input](../assets/input.jpg)
 
-and this is the result he got.
+This is the result he got.
 
 ![output](../assets/output.jpg)
  
-He now can choose to clear everything to do the same thing for a new equation. 
+He we can choose to clear everything or to do the same thing for a new equation. 
 
 ## Challenges faced
 
-During the whole project we faced many challenges. From the start with the decision on ho to design the interaction with the users. This led to the actual setting where the user can choose what to input for its reaction. 
-The balance of the equation was less of a struggle as it really used skills we developped during the semester ans last year. The following challege was the represenation of the reaction which guided us in many directions and was very time-consuming. In the end the vsg was a great compromise as is it easy to undestand while keeping the major part of informations on the compounds structure. 
-The biggest challenge was the organization of the python package with all the constrincts and requierments that it goes with (tests, notebook...)
+During the whole project we faced many challenges. From the start with the decision on how to design the interaction with the users. This led to the actual setting where the user can choose what to input for its reaction. 
+The balance of the equation was less of a struggle as it really used skills we developped during the semester and last year. The next challege was the represenation of the reaction which was very time-consuming. In the end the vsg was a great compromise as is it easy to understand while keeping the major part of informations on the compounds structure and chemical reaction. 
+In the end, the biggest challenge was the organization of the python package with all the constrincts and requierments that it goes with (tests, notebook...)
 
 ## Conclusion:
 
