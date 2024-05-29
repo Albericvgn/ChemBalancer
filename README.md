@@ -4,14 +4,14 @@
 
 The Chemical Equation Balancer is a Python program that balances chemical reaction equations based on reactants and products provided by the user in the desired format (name or SMILES).
 
-## Features
+## 🥼 Features
 
 - SMILES or name Input: Accepts reactants and products as SMILES or chemical compound name strings. This provides a convenient way to input reactants and products.
 - Chemical Equation Balancing: Automatically balances chemical equations by solving an integer linear programming problem to find stoichiometric coefficients.
 - Display Reaction: Formats and displays the balanced chemical reaction in a human-readable format.
 - For a specific temperature, it calculates standard enthropy, enthalpy & free gibbs energy in order to display them and tell wether the reaction is spotaneous or not.
 
-## Requirements
+## 📋 Requirements
 
 - [NumPy](https://github.com/numpy/numpy): Required for handling arrays and matrices.
 - [RDKit](https://github.com/rdkit/rdkit): A cheminformatics toolkit used for parsing SMILES strings and generating 2D molecular structures.
