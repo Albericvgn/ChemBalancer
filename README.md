@@ -119,6 +119,8 @@ streamlit run ChemBalancerInterface.py
    - Click on the 'Balance Equation' button to generate the balanced reaction as well as the thermochemical data.
    - Use the 'Clear' button if you wish to balance a new equation with different reactants/products.
 
+4.make sure to always have this link by your side 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://rankchem.streamlit.app/)
 
 ##  Reference
 
