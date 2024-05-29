@@ -123,8 +123,7 @@ streamlit run ChemBalancerInterface.py
 
 Now you are all set. Make sure to always have this link by your side:  
 
-Just click on the following logo, and don't forget to pin it to your favorites! 
-([http://128.179.143.112:8507/])
+Just click on the following logo, and don't forget to pin it to your favorites! http://128.179.143.112:8507/
 
 ##  Reference
 
