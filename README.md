@@ -47,7 +47,7 @@ pip install numpy
 ```
 2. Installing RDKit:
 ```
-pip install -c conda-forge rdkit
+conda install -c conda-forge rdkit
 ```
 3. Installing PuLP:
 ```
@@ -91,6 +91,12 @@ pip install .
 ```
 
 For more details on the installation of this package, you can click on the following link: https://github.com/schwallergroup/Rxn-INSIGHT
+
+Once all the dependencies are installed, you can run your Streamlit application. Make sure you are in the directory containing your script and then run:
+
+```
+streamlit run your_script_name.py
+```
 
 ## Usage
 
