@@ -100,7 +100,7 @@ streamlit run your_script_name.py
 
 ##  🔩 Usage
 
-** 1. Activate the environment and navigate to ChemBalancer:
+1. Activate the environment and navigate to ChemBalancer:
   ```
 conda activate your_env_name
 cd ChemBalancer
