@@ -20,7 +20,7 @@ import requests
 import base64
 from io import BytesIO
 from chemicals import CAS_from_any, Tb, Tm, Tc, Hfs, Hfl, Hfg, S0s, S0l, S0g
-from src/chembalancer/chembalancer.py import *
+from chembalancer.py import *
 
 #Creates default session states for potential user inputs which allows the application to remember the values in the event that user wishes to rerun the script.
 
