@@ -16,7 +16,7 @@ from chemicals import CAS_from_any, Tb, Tm, Tc, Hfs, Hfl, Hfg, S0s, S0l, S0g
 from collections import defaultdict
 from rdkit import Chem
 import requests
-
+import base64
 
 
 def get_smiles_from_name(name):
@@ -45,10 +45,10 @@ def count_atoms(smiles):
     mol = Chem.MolFromSmiles(smiles)
     atom_counts = defaultdict(int)
     if mol:
+        mol = Chem.AddHs(mol)
         for atom in mol.GetAtoms():
             atom_counts[atom.GetSymbol()] += 1
     return dict(atom_counts)
-
 
 def solve_ilp(A):
     """ Solve the integer linear programming problem to find stoichiometric coefficients. """
@@ -169,35 +169,60 @@ def create_reaction_string(reactants, products):
     products_str = '.'.join(products)
     return f"{reactants_str}>>{products_str}"
 
+
 def display_svg(svg):
     """Display SVG in Streamlit using markdown with unsafe HTML."""
     b64 = base64.b64encode(svg.encode('utf-8')).decode("utf-8")
     html = f"<img src='data:image/svg+xml;base64,{b64}'/>"
-    st.markdown(html, unsafe_allow_html=True)
+    return html
+
 
 def compound_state(compound, temp):
     CAS_compound = CAS_from_any(compound)
     boiling_p = Tb(CAS_compound)
     melting_p = Tm(CAS_compound)
-    if temp <= melting_p:
+
+    if float(temp) <= float(melting_p):
         return 'solid'
-    elif temp > melting_p and temp <= boiling_p:
-        return 'liquid'
-    else:
+    elif float(temp) >= float(boiling_p):
         return 'gas'
+    else:
+        return 'liquid'
 
 def enthalpy(coeff, compound, state):
+    Cas_compound=CAS_from_any(compound)
     if state == 'solid': 
-        return coeff * Hfs(CAS_from_any(compound))
+        if Hfs(Cas_compound)== None:
+            return 0
+        else: 
+            return float(coeff) * Hfs(Cas_compound)
     elif state == 'liquid':
-        return coeff * Hfl(CAS_from_any(compound))
+        if Hfl(CAS_from_any(compound))== None:
+            return 0
+        else:
+            return float(coeff) * Hfl(Cas_compound)
     else: 
-        return coeff * Hfg(CAS_from_any(compound))
-
+        if Hfg(CAS_from_any(compound))== None:
+            return 0
+        else:
+            return float(coeff) * Hfg(Cas_compound)
+                                    
 def entropy(coeff, compound, state):
+    Cas_compound=CAS_from_any(compound)
     if state == 'solid': 
-        return coeff * S0s(CAS_from_any(compound))
+        if S0s(Cas_compound)== None:
+            return 0
+        else: 
+            return float(coeff) * S0s(Cas_compound)
     elif state == 'liquid':
-        return coeff * S0l(CAS_from_any(compound))
+        if S0l(CAS_from_any(compound))== None:
+            return 0
+        else:
+            return float(coeff) * S0l(Cas_compound)
     else: 
-        return coeff * S0g(CAS_from_any(compound))
+        if S0g(CAS_from_any(compound))== None:
+            return 0
+        else:
+            return float(coeff) * S0g(Cas_compound)
+
+                                    
