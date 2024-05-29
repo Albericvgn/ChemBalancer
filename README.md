@@ -124,7 +124,7 @@ streamlit run ChemBalancerInterface.py
 Now you are all set. Make sure to always have this link by your side:  
 
 Just click on the following logo, and don't forget to pin it to your favorites! 
-[[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)]([http://128.179.143.112:8507/])]
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)]([http://128.179.143.112:8507/])
 
 ##  Reference
 
