@@ -104,10 +104,10 @@ streamlit run your_script_name.py
   ```
 conda activate your_env_name
 cd ChemBalancer
-cd src
+cd src/chembalancer
   ```
 
-2. To open the application, run the following command:
+2. To open the application, run the following command (this command will almost certainly not work with Safari as a browser, nevertheless you can still copy the link and paste it into a different one):
   ```
 streamlit run ChemBalancerInterface.py
   ```
