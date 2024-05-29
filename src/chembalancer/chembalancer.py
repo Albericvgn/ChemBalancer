@@ -173,8 +173,9 @@ def compound_state(compound, temp):
     CAS_compound = CAS_from_any(compound)
     boiling_p = Tb(CAS_compound)
     melting_p = Tm(CAS_compound)
-
-    if float(temp) <= float(melting_p):
+    if melting_p == None or boiling_p == None:
+        return "Sorry, no thermochemical information is available"
+    elif float(temp) <= float(melting_p):
         return 'solid'
     elif float(temp) >= float(boiling_p):
         return 'gas'

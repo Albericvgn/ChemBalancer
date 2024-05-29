@@ -19,20 +19,18 @@ class TestBalanceChemicalEquation:
         pass
 
     def test_combustion_of_methane(self):
-        # Reactants and products
-        reactant_smiles = ['CH4', 'O2']
-        product_smiles = ['CO2', 'H2O']
 
-        # Call the function to test
+        reactant_smiles = ["S=S", "O=O"]
+        product_smiles = ["O=S=O"]
+
         try:
             reactant_data, product_data = balance_chemical_equation(reactant_smiles, product_smiles)
         except ValueError as e:
             assert "Failed to solve the balance equation." in str(e)
             return
 
-        # Assertions
-        expected_reactant_data = [(1, 'CH4'), (2, 'O2')]
-        expected_product_data = [(1, 'CO2'), (2, 'H2O')]
+        expected_reactant_data =[(1, 'S2'), (2, 'O2')]
+        expected_product_data = [(2, 'O2S')]
 
         assert reactant_data == expected_reactant_data
         assert product_data == expected_product_data
