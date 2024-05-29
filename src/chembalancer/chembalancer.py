@@ -161,13 +161,11 @@ def create_reaction_string(reactants, products):
     products_str = '.'.join(products)
     return f"{reactants_str}>>{products_str}"
 
-
 def display_svg(svg):
     """Display SVG in Streamlit using markdown with unsafe HTML."""
     b64 = base64.b64encode(svg.encode('utf-8')).decode("utf-8")
     html = f"<img src='data:image/svg+xml;base64,{b64}'/>"
-    return html
-
+    st.markdown(html, unsafe_allow_html=True)
 
 def compound_state(compound, temp):
     CAS_compound = CAS_from_any(compound)
@@ -217,5 +215,3 @@ def entropy(coeff, compound, state):
             return 0
         else:
             return float(coeff) * S0g(Cas_compound)
-
-                                    
