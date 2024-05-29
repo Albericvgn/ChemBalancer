@@ -1,4 +1,4 @@
-name: test_balance_chemical_equation
+name: tests
 on: push
 
 jobs:
