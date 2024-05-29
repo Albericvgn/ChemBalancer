@@ -114,10 +114,6 @@ def balance_chemical_equation(reactant_smiles, product_smiles):
     A_reactants = setup_matrix(elements, reactant_counts)
     A_products = setup_matrix(elements, product_counts)
 
-    # Check that both matrices have the same number of columns (element types)
-    if A_reactants.shape[1] != A_products.shape[1]:
-        raise ValueError("Internal error: Reactants and products matrices do not match in column dimension.")
-
     A = np.concatenate([A_reactants, -A_products], axis=1)
 
     integer_coefficients = solve_ilp(A)
@@ -134,11 +130,10 @@ def balance_chemical_equation(reactant_smiles, product_smiles):
 
 def setup_matrix(elements, counts):
     matrix = []
-    for count in counts:
-        row = [count.get(element, 0) for element in elements]
+    for element in elements:
+        row = [compound.get(element, 0) for compound in counts]
         matrix.append(row)
-    return np.array(matrix)
-
+    return np.array(matrix, dtype=int)
 
 
 def display_reaction(reactants, products):
