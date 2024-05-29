@@ -104,6 +104,7 @@ streamlit run your_script_name.py
   ```
 conda activate your_env_name
 cd ChemBalancer
+cd src
   ```
 
 2. To open the application, run the following command:
