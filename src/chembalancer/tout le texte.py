@@ -93,6 +93,8 @@ def get_molecular_formula(smiles):
     else:
         return "Invalid SMILES string"
 
+
+
 def balance_chemical_equation(reactant_smiles, product_smiles):
     reactant_counts = [count_atoms(smiles) for smiles in reactant_smiles]
     product_counts = [count_atoms(smiles) for smiles in product_smiles]
@@ -110,13 +112,15 @@ def balance_chemical_equation(reactant_smiles, product_smiles):
             error_message += f"Elements {missing_in_reactants} are in products but not in reactants."
         raise ValueError(error_message)
 
+    # Use the union of elements from reactants and products
     elements = sorted(reactant_elements.union(product_elements))
+
     A_reactants = setup_matrix(elements, reactant_counts)
     A_products = setup_matrix(elements, product_counts)
 
-    # Check that both matrices have the same number of columns (element types)
-    if A_reactants.shape[1] != A_products.shape[1]:
-        raise ValueError("Internal error: Reactants and products matrices do not match in column dimension.")
+    # Debugging: Ensure matrices have the same number of rows
+    if A_reactants.shape[0] != A_products.shape[0]:
+        raise ValueError("Internal error: Reactants and products matrices do not match in row dimension.")
 
     A = np.concatenate([A_reactants, -A_products], axis=1)
 
@@ -133,12 +137,15 @@ def balance_chemical_equation(reactant_smiles, product_smiles):
     return reactant_data, product_data
 
 def setup_matrix(elements, counts):
+    # Setup the matrix based on the element order and counts provided
     matrix = []
     for count in counts:
         row = [count.get(element, 0) for element in elements]
         matrix.append(row)
-    return np.array(matrix)
-
+    matrix = np.array(matrix)
+    if matrix.ndim == 1:
+        matrix = matrix.reshape(1, -1)
+    return matrix
 
 
 def display_reaction(reactants, products):
