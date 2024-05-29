@@ -1,4 +1,4 @@
-# project_report
+## Project report
 
 The report is separated in 2 parts
 - The first one with the text part of the report.
